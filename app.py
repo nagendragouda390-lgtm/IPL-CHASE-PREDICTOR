@@ -34,7 +34,7 @@ app = Flask(__name__)
 # ---------------------------------------------------------------------------
 # Load model
 # ---------------------------------------------------------------------------
-MODEL_PATH = os.path.join(os.path.dirname(__file__), "model", "model.pkl")
+MODEL_PATH = os.path.join(os.path.dirname(__file__),"model.pkl")
 model = joblib.load(MODEL_PATH)
 
 # Exact column order the model was trained on
