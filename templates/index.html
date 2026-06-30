@@ -30,7 +30,7 @@
       <h2 class="card-title">Enter Match Situation</h2>
       <p class="card-subtitle">Fill in the live scorecard details to get an instant prediction.</p>
 
-      <form action="/predict" method="POST" class="predict-form">
+      <form action="/predict" method="POST" class="predict-form" id="predictForm" novalidate>
 
         <div class="form-grid">
           <div class="field">
@@ -49,6 +49,7 @@
                 <option value="{{ team }}" {% if loop.index0 == 1 %}selected{% endif %}>{{ team }}</option>
               {% endfor %}
             </select>
+            <span class="hint error-hint" id="teamError">Batting and bowling team must be different.</span>
           </div>
 
           <div class="field">
@@ -59,6 +60,7 @@
           <div class="field">
             <label for="curr_run">Current Runs</label>
             <input type="number" id="curr_run" name="curr_run" min="0" placeholder="e.g. 92" required>
+            <span class="hint error-hint" id="scoreError">Current score cannot be greater than the target.</span>
           </div>
 
           <div class="field">
@@ -104,6 +106,48 @@
   <footer class="site-footer">
     <p>Built with Flask &amp; scikit-learn · IPL Chase Predictor</p>
   </footer>
+
+  <script>
+    (function () {
+      const form = document.getElementById('predictForm');
+      const battingSelect = document.getElementById('batting_team');
+      const bowlingSelect = document.getElementById('bowling_team');
+      const targetInput = document.getElementById('target');
+      const currRunInput = document.getElementById('curr_run');
+      const teamError = document.getElementById('teamError');
+      const scoreError = document.getElementById('scoreError');
+
+      function checkTeams() {
+        const sameTeam = battingSelect.value === bowlingSelect.value;
+        teamError.classList.toggle('show', sameTeam);
+        battingSelect.classList.toggle('invalid', sameTeam);
+        bowlingSelect.classList.toggle('invalid', sameTeam);
+        return !sameTeam;
+      }
+
+      function checkScore() {
+        const target = parseInt(targetInput.value, 10);
+        const currRun = parseInt(currRunInput.value, 10);
+        const tooHigh = !isNaN(target) && !isNaN(currRun) && currRun > target;
+        scoreError.classList.toggle('show', tooHigh);
+        currRunInput.classList.toggle('invalid', tooHigh);
+        return !tooHigh;
+      }
+
+      battingSelect.addEventListener('change', checkTeams);
+      bowlingSelect.addEventListener('change', checkTeams);
+      targetInput.addEventListener('input', checkScore);
+      currRunInput.addEventListener('input', checkScore);
+
+      form.addEventListener('submit', function (e) {
+        const teamsOk = checkTeams();
+        const scoreOk = checkScore();
+        if (!teamsOk || !scoreOk) {
+          e.preventDefault();
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
