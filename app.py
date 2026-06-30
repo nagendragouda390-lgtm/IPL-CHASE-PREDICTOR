@@ -34,7 +34,7 @@ app = Flask(__name__)
 # ---------------------------------------------------------------------------
 # Load model
 # ---------------------------------------------------------------------------
-MODEL_PATH = os.path.join(os.path.dirname(__file__),"model.pkl")
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "model", "model.pkl")
 model = joblib.load(MODEL_PATH)
 
 # Exact column order the model was trained on
@@ -128,6 +128,21 @@ def predict():
         curr_run = int(request.form.get("curr_run", 0))
         curr_wicket = int(request.form.get("curr_wicket", 0))
         overs_input = request.form.get("overs", "0.0")
+
+        # ---- Input validation ----------------------------------------------
+        if batting_team == bowling_team:
+            return render_template(
+                "result.html",
+                r=None,
+                error="Batting team and bowling team cannot be the same. Please select two different teams.",
+            )
+
+        if curr_run > target:
+            return render_template(
+                "result.html",
+                r=None,
+                error=f"Current score ({curr_run}) cannot be greater than the target ({target}).",
+            )
 
         # ---- Core calculations (per project spec) -------------------------
         ball_number = overs_to_balls(overs_input)
