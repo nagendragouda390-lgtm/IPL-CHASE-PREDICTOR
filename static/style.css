@@ -152,6 +152,22 @@ body {
   color: #7c87a8;
 }
 
+.error-hint {
+  display: none;
+  color: var(--red);
+  font-weight: 500;
+}
+.error-hint.show {
+  display: block;
+  animation: fadeInUp 0.3s ease both;
+}
+
+.field input.invalid,
+.field select.invalid {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(231,76,60,0.2);
+}
+
 .predict-btn {
   margin-top: 30px;
   width: 100%;
