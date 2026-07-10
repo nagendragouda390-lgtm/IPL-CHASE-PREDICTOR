@@ -3,31 +3,31 @@
    ============================================================ */
 
 :root {
-  --navy: #993209;
-  --navy-light: #1c2541;
-  --teal: #3a86ff;
-  --gold: #ffd60a;
-  --green: #2ecc71;
-  --yellow: #f1c40f;
-  --orange: #f39c12;
-  --red: #e74c3c;
-  --text-light: #f5f7fa;
-  --text-muted: #b8c1d9;
-  --font-display: 'Bebas Neue', sans-serif;
-  --font-body: 'Poppins', sans-serif;
-  --radius: 18px;
-  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    --navy: #1B4332;
+    --navy-light: #2D6A4F;
+    --teal: #52B788;
+    --gold: #FFD60A;
+    --green: #74C69D;
+    --yellow: #FACC15;
+    --orange: #F59E0B;
+    --red: #EF4444;
+    --text-light: #F8FAFC;
+    --text-muted: #D1FAE5;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Poppins', sans-serif;
+    --radius: 18px;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: var(--font-body);
-  background: linear-gradient(160deg, #0b132b 0%, #1c2541 55%, #0d1b3e 100%);
-  color: var(--text-light);
-  min-height: 100vh;
-  position: relative;
-  overflow-x: hidden;
+    font-family: var(--font-body);
+    background: linear-gradient(160deg, #0B2E22 0%, #1B4332 45%, #2D6A4F 100%);
+    color: var(--text-light);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
 }
 
 .bg-overlay {
