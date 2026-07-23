@@ -16,4 +16,4 @@
 # Prediction
 - is chased or not
 
-<img src="images\InShot_20260723_101723335.png" height="20" width ="20"><img src="images\InShot_20260723_101614797.png" height="20" width ="20"><img src="images\InShot_20260723_101525051.png" height="20" width ="20"><img src="images\InShot_20260723_101332190.png" height="20" width ="20"><img src="images\InShot_20260723_082133611.png" height="20" width ="20">
+<img src="images\InShot_20260723_101723335.png" height="50" width ="50"><img src="images\InShot_20260723_101614797.png" height="50" width ="50"><img src="images\InShot_20260723_101525051.png" height="50" width ="50"><img src="images\InShot_20260723_101332190.png" height="50" width ="50"><img src="images\InShot_20260723_082133611.png" height="50" width ="50">
