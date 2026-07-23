@@ -16,4 +16,4 @@
 # Prediction
 - is chased or not
 
-<img src="images\python.png" height="50" width ="50"><img src="images\numpy.png" height="50" width ="50"><img src="images\pandas.png" height="50" width ="50"><img src="images\matplotlibs.png" height="50" width ="50"><img src="images\scikit-learn.png" height="50" width ="50">
+<img src="images\python.png" height="40" width ="40"><img src="images\numpy.png" height="40" width ="40"><img src="images\pandas.png" height="40" width ="40"><img src="images\matplotlib.png" height="40" width ="40"><img src="images\scikit-learn.png" height="40" width ="40">
